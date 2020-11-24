@@ -32,19 +32,19 @@ dVdt =  [gamma * beta * B * phi * V] - [phi * V * B] -  [m * V]
 First, we use values collected from literature to show that without physical concentration due to brine concentrating factor viral infection would have negligble impact on microbial populations and carbon cycling within sea ice. The parameters are given in the Spreadsheet titled XXX.xlsx
 
 
-Here's our figure of carbon cycling (1 = maximum carbon) as a function of temperature **WITHOUT** Brine Concentrating Factor
+### Here's our figure of carbon cycling (1 = maximum carbon) as a function of temperature **WITHOUT** Brine Concentrating Factor
 
 ![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_noRCR_line.jpeg)
 
 
-Here's our figure of carbon cycling (1 = maximum carbon) as a function of temperature **WITH** Brine Concentrating Factor
 
-![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_withRCR_line.jpeg)
 
 Secondly, we apply a **physical concentration parameter** to the model. This physical concentration, a result of tightly constricted pore space within sea ice crystals, has been suggested to increase the _relative contact rate (RCR)_ of viruses and bacteria within sea ice brines compared to underlying seawater. The relationship between RCR and temperature, calculated by Wells and Deming 2006b, is shown below.
 ![WellsRCR.png](https://github.com/gshowalt/VirusPopModel/blob/main/WellsRCR.png) 
 
+### Here's our figure of carbon cycling (1 = maximum carbon) as a function of temperature **WITH** Brine Concentrating Factor
 
+![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_withRCR_line.jpeg)
 
 
 
