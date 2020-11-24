@@ -36,8 +36,8 @@ import random
 def f2(s,t, leak, lyse, temp):
     
     if temp < -1:
-        RCR = 0.0716*temp**4 + 2.9311*temp**3 + 34.108*temp**2 + 45.826*temp + 3.5125 #Fit from Wells and Deming, 2006
-        BCF = -0.0106 * temp **2 - 0.519 * temp + 0.2977
+        RCR =  1 #0.0716*temp**4 + 2.9311*temp**3 + 34.108*temp**2 + 45.826*temp + 3.5125 #Fit from Wells and Deming, 2006
+        BCF =  1 #-0.0106 * temp **2 - 0.519 * temp + 0.2977
         sal = 32 * BCF
     else:
         RCR = 1
@@ -203,8 +203,8 @@ for xx in temp_list:
     gamma = 1
     #print ("gamma is:", gamma, "and mu is:", mu)
     if temp < -1:
-        RCR = 0.0716*temp**4 + 2.9311*temp**3 + 34.108*temp**2 + 45.826*temp + 3.5125 #Fit from Wells and Deming, 2006
-        BCF = -0.0106 * temp **2 - 0.519 * temp + 0.2977
+        RCR = 1 # 0.0716*temp**4 + 2.9311*temp**3 + 34.108*temp**2 + 45.826*temp + 3.5125 #Fit from Wells and Deming, 2006
+        BCF = 1 # -0.0106 * temp **2 - 0.519 * temp + 0.2977
         sal = 32 * BCF
     else:
         BCF = 1
@@ -302,14 +302,10 @@ plt.ylabel('Carbon Movement')
 plt.xlabel('Temperature')
 
 
-# In[105]:
-
-
+### ---- Save Figure ---- ##
 #fig1.savefig('CE_Grid.jpeg',  bbox_inches="tight", dpi=300,transparent=True)
-fig2.savefig('CE_GrowthratevTemp.jpeg',  bbox_inches="tight", dpi=300,transparent=True)
+#fig2.savefig('CE_GrowthratevTemp.jpeg',  bbox_inches="tight", dpi=300,transparent=True)
 
-
-# In[ ]:
 
 
 
