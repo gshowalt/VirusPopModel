@@ -1,13 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
 
-
-# This is us coverting all our values to carbon equivalents to better understand 
-
+# Import all modules
 import numpy as np
-
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
@@ -16,41 +12,27 @@ import matplotlib.tri as tri
 from matplotlib.colors import LogNorm
 import matplotlib.patches as mpatches
 from matplotlib.ticker import LogFormatter 
-
-from collections import Counter
-
-from functools import wraps
-
 import csv
 import sys
-
 import itertools
 from itertools import islice, cycle, chain
-
 import scipy as sp
 from scipy.interpolate import griddata
 from scipy import interpolate
 from scipy.integrate import odeint
 from scipy.stats import pareto
 from scipy.stats import loguniform
-
 import seaborn as sns
 import pandas as pd
-
 import statistics as stats
 import lhsmdu
-
 from math import nan
-
 from SALib.sample import saltelli, latin, ff
 from SALib.analyze import sobol
-
 import random
 
 
-# In[11]:
-
-
+### ---- define the equation with system of ODEs ---- ###
 def f2(s,t, leak, lyse, temp):
     
     if temp < -1:
@@ -170,9 +152,7 @@ def f2(s,t, leak, lyse, temp):
     return [dNdt, dBdt, dVdt, dPdt, TotalVCarbon, VirusCarbon, LysateCarbon, LeakCarbon]
 
 
-# In[15]:
-
-
+### ---- Set up condition and run the equation ---- ##
 time = 5000
 temp_list = [-12.5,-10, -8, -6, -4, -2]
 t = np.linspace(1,time,1000)
@@ -307,9 +287,7 @@ fig1.suptitle("Cumulative organic carbon recycled as a function of driving sourc
 
 
 
-# In[14]:
-
-
+### ---- plot as a function of temp rather than time ---- ##
 plt.rcParams["font.family"] = "sans-serif"
 fig2 = plt.figure(figsize=(20,10))
 fig2.tight_layout()
