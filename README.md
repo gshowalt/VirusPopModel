@@ -6,7 +6,9 @@ This project was written to demonstrate the potential contribution of bacterioph
 
 Here, we have built a simple population dynamic model using ordinary differential equations to demonstrate potential and constrain rates of viral infection and virally-mediated carbon cycling within sea ice brines. First, we use values collected from literature to show that without physical concentration due to brine concentrating factor viral infection would have negligble impact on microbial populations and carbon cycling within sea ice. The parameters are given in the Spreadsheet titled XXX.xlsx
 
-Secondly, we apply a physical concentration parameter to the model. This physical concentration, a result of tightly constricted pore space within sea ice crystals, has been suggested to increase the relative contact rate (RCR) of viruses and bacteria within sea ice brines compared to underlying seawater. The relationship between RCR and temperature, calculated by Wells and Deming 2006b, is shown in WellsRCR.png 
+Secondly, we apply a physical concentration parameter to the model. This physical concentration, a result of tightly constricted pore space within sea ice crystals, has been suggested to increase the relative contact rate (RCR) of viruses and bacteria within sea ice brines compared to underlying seawater. The relationship between RCR and temperature, calculated by Wells and Deming 2006b, is shown below and available in the repository as [WellsRCR.png](https://github.com/gshowalt/VirusPopModel/blob/main/WellsRCR.png)
+![WellsRCR.png](https://github.com/gshowalt/VirusPopModel/blob/main/WellsRCR.png) 
+
 
 
 
