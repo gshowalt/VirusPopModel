@@ -23,18 +23,21 @@ Virus Population
 
 Which were then coded into Python 3:
 ```
-dNdt = [-alpha * (N / (N + Q)) * B] + [g * (alpha  * (N/(N+Q))*B)] + [(n * 1e-7 * gamma * phi * V * B)]
-dBdt = [(mu) * (N/(Q + N)) * B] - [gamma * phi * V * B - d]
-dVdt =  [gamma * beta * B * phi * V] - [phi * V * B] -  [m * V]
+dNdt = (-alpha * (N / (N + Q)) * B) + (g * (alpha  * (N/(N+Q))*B)) + (n * 1e-7 * phi * V * B)
+dBdt = ((mu) * (N/(Q + N)) * B) - (phi * V * B - d)
+dVdt =  (beta * B * phi * V) - (phi * V * B) -  (m * V)
 ```
 
-Running without manipulation 
-First, we use values collected from literature to show that without physical concentration due to brine concentrating factor viral infection would have negligble impact on microbial populations and carbon cycling within sea ice. The parameters are given in the Spreadsheet titled XXX.xlsx
+### Running without manipulation 
+First, we use values collected from literature to show that without physical concentration due to _brine concentrating factor_ (BCF), viral infection would have negligble impact on microbial populations and carbon cycling within sea ice.
 
+In order to make this demonstration, we first took our above equations coded into Python and applied biological values (i.e. beta (burst size), phi (adsorption rate), mu (bacterial growth rate), and delta (viral decay rate)) collected from literature and parameterized as function dependent on temperature. Temperature-dependent values allowed us to 
 
 Here's our figure of carbon cycling (1 = maximum carbon) as a function of temperature **WITHOUT** Brine Concentrating Factor
 
 ![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_noRCR_line.jpeg)
+
+
 
 
 
