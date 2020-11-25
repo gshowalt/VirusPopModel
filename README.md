@@ -52,4 +52,4 @@ Here's our figure of carbon cycling (1 = maximum carbon) as a function of temper
 
 
 ### Notes
-
+ <sup>1</sup> While values were parameterized from literature, unmanipulated parameters produced [run-away conditions](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Grid_withRCR_runaway.jpeg) of growth and infection at certain temperatures. 
