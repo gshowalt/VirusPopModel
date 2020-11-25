@@ -28,7 +28,7 @@ dBdt = ((mu) * (N/(Q + N)) * B) - (phi * V * B - d)
 dVdt =  (beta * B * phi * V) - (phi * V * B) -  (m * V)
 ```
 
-### Running without manipulation 
+### How does viral infection contribute to carbon cycling within sea ice?
 First, we use values collected from literature to show that without physical concentration due to _brine concentrating factor_ (BCF), viral infection would have negligble impact on microbial populations and carbon cycling within sea ice.
 
 In order to make this demonstration, we first took our above equations coded into Python and applied biological values (i.e. beta (burst size), phi (adsorption rate), mu (bacterial growth rate), and delta (viral decay rate)) collected from literature and parameterized as function dependent on temperature  <sup>[1](###Notes)</sup>. Temperature-dependent values allowed us to 
