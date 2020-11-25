@@ -31,7 +31,7 @@ dVdt =  (beta * B * phi * V) - (phi * V * B) -  (m * V)
 ### Running without manipulation 
 First, we use values collected from literature to show that without physical concentration due to _brine concentrating factor_ (BCF), viral infection would have negligble impact on microbial populations and carbon cycling within sea ice.
 
-In order to make this demonstration, we first took our above equations coded into Python and applied biological values (i.e. beta (burst size), phi (adsorption rate), mu (bacterial growth rate), and delta (viral decay rate)) collected from literature and parameterized as function dependent on temperature. Temperature-dependent values allowed us to 
+In order to make this demonstration, we first took our above equations coded into Python and applied biological values (i.e. beta (burst size), phi (adsorption rate), mu (bacterial growth rate), and delta (viral decay rate)) collected from literature and parameterized as function dependent on temperature  <sup>[1](###Notes)</sup>. Temperature-dependent values allowed us to 
 
 The code for this step is uploaded to the repository as [CarbonEquiv_noRCR.py](https://github.com/gshowalt/VirusPopModel/blob/main/CarbonEquiv_noRCR.py) .
 
@@ -51,5 +51,5 @@ Here's our figure of carbon cycling (1 = maximum carbon) as a function of temper
 ![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_withRCR_line.jpeg)
 
 
-
+### Notes
 
