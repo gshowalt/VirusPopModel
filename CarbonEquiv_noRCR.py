@@ -36,8 +36,8 @@ import random
 def f2(s,t, leak, lyse, temp):
     
     if temp < -1:
-        RCR =  1 #0.0716*temp**4 + 2.9311*temp**3 + 34.108*temp**2 + 45.826*temp + 3.5125 #Fit from Wells and Deming, 2006
-        BCF =  1 #-0.0106 * temp **2 - 0.519 * temp + 0.2977
+        RCR =  1 
+        BCF =  1
         sal = 32 * BCF
     else:
         RCR = 1
@@ -57,22 +57,12 @@ def f2(s,t, leak, lyse, temp):
     beta = np.random.normal(beta_mu, beta_std)"""
 
     #build growth curve as fxn of Temp
-    #mu = mux*(2e-5*temp**3 + 0.0008 * temp **2 + 0.0091 * temp + 0.0386)
-    #mu = 3e-6*temp**4 + 0.0001*temp**3+0.0014*temp**2 + 0.0092 * temp +0.0333
+ 
     mu = 0.0441*np.exp(0.4991*temp)
-    """mu_std = 0.1*2e-5*temp**3 + 0.0009 * temp **2 + 0.0144 * temp + 0.0818
-    if mu_std<0:
-        mu_std = 0.001
-    mu = np.random.normal(mu_mu, mu_std)"""
-
+ 
     #build adsorption curve as fxn of Salinity (which is function of temp)
-    #phi = phix * -1e-11*sal**2 +4e-9*sal - 9e-8
     phi = phix * (6e-13 * temp **5 - 2e-11 * temp ** 4 + 1e-10 * temp ** 3 + 3e-9 * temp ** 2 - 3e-8 * temp + 5e-8)
-    """phi_std = -2e-11*sal**2 + 4e-9*sal - 9e-8
-    if phi_std < 0:
-        phi_std = 0
-    phi = np.random.normal(phi_mu, phi_std)"""
-    
+
     if mu <= 0:
         mu = 0.000
     if beta < 0:
@@ -83,11 +73,7 @@ def f2(s,t, leak, lyse, temp):
     
     
     phi = phi * RCR
-    #print (phi)
-    
-
-    
-    #print ((phi))
+ 
     alpha = 1.2e-7*3**((temp-23)/10)#4.2e-7 at +8, or 1.2e-7 at lower temps, at -5 --> mu = 0.25/day = 0.01/hr = 1e-8
     # alpha is a coefficient that we'd like to change with temperature? Or change eta?
     #nutrient transfer coefficient to bacteria (ug/cell * hr)
@@ -148,7 +134,6 @@ def f2(s,t, leak, lyse, temp):
     LeakCarbon = g * (alpha  * (N/(N+Q))*B)
 
     
-    #print (mu, beta, phi, gamma)
     return [dNdt, dBdt, dVdt, dPdt, TotalVCarbon, VirusCarbon, LysateCarbon, LeakCarbon]
 
 
@@ -175,9 +160,6 @@ cend = []
 dend = []
 eend = []
 fend = []
-
-
-#vari = np.arange(0,1000,0.001)
 RCRlist = []
 Mulist = []
 
@@ -201,17 +183,14 @@ for xx in temp_list:
     xend = []
     mu = 0.0441*np.exp(0.4991*temp)
     gamma = 1
-    #print ("gamma is:", gamma, "and mu is:", mu)
     if temp < -1:
-        RCR = 1 # 0.0716*temp**4 + 2.9311*temp**3 + 34.108*temp**2 + 45.826*temp + 3.5125 #Fit from Wells and Deming, 2006
-        BCF = 1 # -0.0106 * temp **2 - 0.519 * temp + 0.2977
+        RCR = 1 
+        BCF = 1 
         sal = 32 * BCF
     else:
         BCF = 1
         sal = 32
-        
-    #print ("Temp is:", temp, "and RCR is:", RCR)
-    
+            
     for i in vari1:
         for j in vari2:
             
@@ -219,9 +198,7 @@ for xx in temp_list:
             s = odeint(f2,s0,t, args = (i,j, temp))
             xend.append(sum(s[:,3]))
 
-    #print (xend)     
     length =  len(xend)
-    #print (length)
     y = list(islice(cycle(vari1),length))
     vari_axis = []
 
@@ -234,10 +211,8 @@ for xx in temp_list:
     y3 = s[:,6]/(0.12*BCF)
     y4 = s[:,7]/(0.12*BCF)
     
-   
+    # set up plot
     plt.subplot(3, 3, count)
-
-    
     colors1 = ['cadetblue', '#FF6F61'] #, 'darkblue']
     plt.stackplot(t,y2,y3, colors = colors1,labels=['To Virus','To Lysate'])
     plt.legend(loc='lower right')
@@ -260,29 +235,9 @@ for xx in temp_list:
     phi = RCR* 1 * (6e-13 * temp **5 - 2e-11 * temp ** 4 + 1e-10 * temp ** 3 + 3e-9 * temp ** 2 - 3e-8 * temp + 5e-8)
     Adsorplist.append(phi)
 
-#fig1.text(0.5, 0.36, 'fraction of exudate to DOC pool',ha='center',fontsize=10)
-#fig1.text(0.08, 0.65, 'fraction of lytic material to DOC pool', va='center', rotation='vertical',fontsize=10)
-
-
-
 plt.subplots_adjust(hspace = 0.25)
-
-
-"""plt.subplot(3,1,3)
-slope = [-1.6,-0.14,-0.15,-0.22,-0.6,-2.15]
-#note that slopes were calculated using web plot digitizer and data is available on my desktop
-plt.plot(temp_list, slope, 'k')
-plt.title('Relative Lytic Control', fontsize = 15)
-plt.ylabel('Contour Slope (0 = Max Lytic)', fontsize=10)
-plt.xlabel('Temperature (˚C)', fontsize=10)"""
-#ax1.text(textx,texty,"g = 0", color = "white")
-#ax1.set_title("DOM regenerated")
-#ax1.set_ylim([0.01,2])
-#ax1.set_yscale('log')
-
 fig1.suptitle("Cumulative organic carbon recycled as a function of driving source ",fontsize=20)
 
-#plt.stackplot(temp,endvals2,endvals3,labels=['To Virus','To Lysate'])
 
 
 
@@ -291,11 +246,8 @@ fig1.suptitle("Cumulative organic carbon recycled as a function of driving sourc
 plt.rcParams["font.family"] = "sans-serif"
 fig2 = plt.figure(figsize=(20,10))
 fig2.tight_layout()
-
 plt.rcParams.update({'font.size': 20})
 ax1 = plt.stackplot(temp_list, endvals2, endvals3, colors = colors1) #, labels=['To Virus','To Lysate', 'Cell exudate'])
-#ax1 = plt.plot(temp_list, Burstlist)
-
 
 #plt.legend(loc='upper left')
 plt.ylabel('Carbon Movement')
