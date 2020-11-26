@@ -42,9 +42,6 @@ from SALib.analyze import sobol
 import random
 
 
-# In[127]:
-
-
 # define the function which includes the differential equations
 # this was adapted from the leak/lyse experiment so I just left that in and set it to a final value later
 
@@ -161,9 +158,6 @@ def f2(s,t, leak, lyse, temp):
     
     #print (mu, beta, phi, gamma)
     return [dNdt, dBdt, dVdt, dPdt, TotalVCarbon, VirusCarbon, LysateCarbon, LeakCarbon]
-
-
-# In[133]:
 
 
 # define time, temperature scale
