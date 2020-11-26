@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[102]:
-
 
 # importing all modules
 import numpy as np
@@ -257,12 +252,7 @@ for xx in temp_list:
 plt.subplots_adjust(hspace = 1)
 fig1.suptitle("Cumulative organic carbon recycled into Virions or Lysate ",fontsize=15)
 
-
-
-
-# In[132]:
-
-
+# Plot as a funciton of temperature
 plt.rcParams["font.family"] = "sans-serif"
 plt.rcParams.update({'font.size': 20})
 fig2 = plt.figure(figsize=(10,5))
@@ -288,14 +278,8 @@ fig2.suptitle("Cumulative organic carbon recycled into \nVirions or Lysate as a 
 
 
 # In[88]:
-
-
 #fig1.savefig('CE_Grid_withRCR_runaway.jpeg',  bbox_inches="tight", dpi=300,transparent=True)
 #fig2.savefig('CE_Temp_noRCR_line.jpeg',  bbox_inches="tight", dpi=300,transparent=True)
-
-
-# In[ ]:
-
 
 
 
