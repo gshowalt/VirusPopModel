@@ -53,7 +53,9 @@ Here's our figure of carbon cycling (1 = maximum carbon) as a function of temper
 
 ## 2. Can we replicate Virus to Bactera Ratios by tuning parameters?
 
-In addition to understanding virally mediate carbon flow within sea ice brines, we want to undertand potential controls on the virus to bacteria (VBR) ratio in sea ice. 
+In addition to understanding virally mediate carbon flow within sea ice brines, we want to undertand potential controls on the virus to bacteria (VBR) ratio in sea ice. [Observation of VBR within sea ice](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png) demonstrate high variability, and VBR can reach ratios fo 10,000 : 1 - much higher than the typical 10:1 or 100:1 values seen in seawater.
+
+![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png)
 
 
 ### Notes
