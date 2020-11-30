@@ -57,10 +57,13 @@ In addition to understanding virally mediated carbon flow within sea ice brines,
 
 ![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png)
 
-To test parameter ranges in VBR, we iterated through random ranges of parameters in the simplest possible system 
+To test parameter ranges in VBR, we iterated through random ranges of parameters in the simplest possible system (insert EQs), calculating VBRs for each set of randomly chosen parameter ranges and comparing the calculated VBR distribution to the observed distributions in the above figure. When the calculated VBR distribution was considered "the same" as the observed VBR distribution (i.e., 95% by a [Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)), we collected that set of parameter values as a possible "solution"  - a set of parameter ranges which could be reflective of the true environment. 50 of these parameter ranges are plotted below, with the range shown for burst size, growth rate, and decay rate by individual lines and the average value in the circles. The ranges are ordered in ascending order, top to bottom, according to decay rate average.
 
+![Parameter Distributions](https://github.com/gshowalt/VirusPopModel/blob/main/ParameterDistribution.png)
 
+From this figure, we can see that growth rate and decay rate appear to tightly co-vary, while burst size changs independent to either growth rate or burst size. Additionally, the wide range of burst size values for each parameter set implies that burst size has minimal effect on the final VBR.
 
+## 3. Can we replicate absoute abundance of viruses and bacteria by tuning parameters?
 
 ### Notes
  <sup>1</sup> While values were parameterized from literature, unmanipulated parameters produced [run-away conditions](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Grid_withRCR_runaway.jpeg) of growth and infection at certain temperatures. 
