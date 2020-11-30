@@ -63,6 +63,8 @@ To test parameter ranges in VBR, we iterated through random ranges of parameters
 
 From this figure, we can see that growth rate and decay rate appear to tightly co-vary, while burst size changs independent to either growth rate or burst size. Additionally, the wide range of burst size values for each parameter set implies that burst size has minimal effect on the final VBR.
 
+The code for this step is given in [This file](https://github.com/gshowalt/VirusPopModel/blob/main/ParameterFitting.py)
+
 ## 3. Can we replicate absoute abundance of viruses and bacteria by tuning parameters?
 
 We repeated the process from above against absolute abundance values, finding parameters that can replicate absolute abundance for both viruses and bacteria within KS metric > 0.05. 
