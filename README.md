@@ -65,5 +65,7 @@ From this figure, we can see that growth rate and decay rate appear to tightly c
 
 ## 3. Can we replicate absoute abundance of viruses and bacteria by tuning parameters?
 
+![FittoBoth](https://github.com/gshowalt/VirusPopModel)
+
 ### Notes
  <sup>1</sup> While values were parameterized from literature, unmanipulated parameters produced [run-away conditions](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Grid_withRCR_runaway.jpeg) of growth and infection at certain temperatures. 
