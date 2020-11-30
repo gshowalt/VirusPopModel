@@ -65,6 +65,8 @@ From this figure, we can see that growth rate and decay rate appear to tightly c
 
 ## 3. Can we replicate absoute abundance of viruses and bacteria by tuning parameters?
 
+We repeated the process from above against absolute abundance values, finding parameters that can replicate absolute abundance for both viruses and bacteria within KS metric > 0.05. 
+
 ![FittoBoth](https://github.com/gshowalt/VirusPopModel/blob/main/FittoBoth.png)
 
 ### Notes
