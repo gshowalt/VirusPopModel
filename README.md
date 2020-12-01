@@ -73,3 +73,14 @@ We repeated the process from above against absolute abundance values, finding pa
 
 ### Notes
  <sup>1</sup> While values were parameterized from literature, unmanipulated parameters produced [run-away conditions](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Grid_withRCR_runaway.jpeg) of growth and infection at certain temperatures. 
+
+
+
+# notes for self (Max)
+Follow up from 11/30 mtg:
+1. create time-dependent plot - > does it behave as expected? Do we see a net loss of carbon due to *mV* term
+2. Check on carbon cycling equations - do they still work if you pull them out of the odeint term
+3. make carbon cycling plot w/o breakdown into lysate/virions
+4. think of most intuitive figure to show RCR relationship in carbon cycling figure
+5. compare parameter fitting for simple vs. complex eqs.
+6. craft narrative order of the story
