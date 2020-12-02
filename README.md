@@ -24,9 +24,15 @@ Virus Population
 Which were then coded into Python 3:
 ```
 dNdt = (-alpha * (N / (N + Q)) * B) + (g * (alpha  * (N/(N+Q))*B)) + (n * 1e-7 * phi * V * B)
-dBdt = ((mu) * (N/(Q + N)) * B) - (phi * V * B - d)
+dBdt = ((mu) * (N/(Q + N)) * B) - (phi * V * B) - d*B
 dVdt =  (beta * B * phi * V) - (phi * V * B) -  (m * V)
 ```
+
+These equations differ from those by Weitz or similar open-water models in that they _do not contain any nutrient inflow_ - instead, they consider the sea ice brine pore as a closed system. As a result - in the equations given above - nutrients are consumed in the given equations and only recycled through exudate and lysis (not through bacterial death or viral decay).
+
+
+
+
 
 ## 1. How does viral infection contribute to carbon cycling within sea ice?
 First, we use values collected from literature to show that without physical concentration due to _brine concentrating factor_ (BCF), viral infection would have negligble impact on microbial populations and carbon cycling within sea ice.
@@ -76,7 +82,7 @@ We repeated the process from above against absolute abundance values, finding pa
 
 
 
-# notes for self (Max)
+#### notes for self (Max)
 Follow up from 11/30 mtg:
 1. create time-dependent plot - > does it behave as expected? Do we see a net loss of carbon due to *mV* term
 2. Check on carbon cycling equations - do they still work if you pull them out of the odeint term
