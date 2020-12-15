@@ -59,9 +59,13 @@ Loosey bound parameters from literature - give the spreadsheet here
 ### "Experiments ###
 
 
-# Results
+# Results & Discussion
 ## 1. Can we replicate Virus to Bactera Ratios by tuning parameters?
-We we run the experiments, we see either extinction of populations or runaway growth of virus populations, as shown below in Figure S1.
+
+Collecting parameter values from literature produced a set of ranges given in [Table 1](https://github.com/gshowalt/VirusPopModel/blob/main/Table1.png) (do we want to include this?).
+
+
+When we run the experiments, we see either extinction of populations or runaway growth of virus populations, as shown below in Figure S1.
 
 ![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_withRCRnoManipulation.png)
  
@@ -114,7 +118,7 @@ Here's our figure of carbon cycling (1 = maximum carbon) as a function of temper
 
 ![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_withRCR_line.jpeg)
 
-# Discussion
+# Additional Considerations
 
 Adsorption
 Salt precipitation
