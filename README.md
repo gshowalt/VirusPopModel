@@ -90,10 +90,10 @@ The steady state solutions for the system were determined by hand and are given 
 To test parameter ranges in VBR, we iterated through random ranges of parameters, calculating VBRs for each set of randomly chosen parameter ranges and comparing the calculated VBR distribution to the observed distributions in the above figure. When the calculated VBR distribution was considered "the same" as the observed VBR distribution (i.e., 95% by a [Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)), we collected that set of parameter values as a possible "solution"  - a set of parameter ranges which could be reflective of the true environment. 46 (I gave up waiting on the program, for the paper we can do more/an even number) of these parameter ranges are plotted below, with the range shown for burst size, growth rate, and decay rate by individual lines and the average value in the circles. The ranges are ordered in ascending order, top to bottom, according to adsorption rate (find the data [here](https://github.com/gshowalt/VirusPopModel/blob/main/TDParams_runs46.xlsx))
 
 ![Parameter Distributions](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_ParamFit_46.png)
-
-From this figure, we can see that growth rate and decay rate appear to tightly co-vary, while burst size changs independent to either growth rate or burst size. Additionally, the wide range of burst size values for each parameter set implies that burst size has minimal effect on the final VBR.
-
 The code for this step is given in [This file](https://github.com/gshowalt/VirusPopModel/blob/main/TD_ParamFitting.py)
+
+NOTE TO SELF: this is just for the VBRs - but what about the absolute abundance? Can we re-run the equations to test that out and find a tighter parameter space?
+
 
 
 ## 2. How does viral infection contribute to carbon cycling within sea ice?
