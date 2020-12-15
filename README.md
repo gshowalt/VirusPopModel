@@ -37,12 +37,17 @@ dVdt =  (beta * B * phi * V) - (phi * V * B) -  (m * V)
 
 These equations differ from those by Weitz or similar open-water models in that they _do not contain any nutrient inflow_ - instead, they consider the sea ice brine pore as a closed system. As a result - in the equations given above - nutrients are consumed in the given equations and only recycled through exudate and lysis (not through bacterial death or viral decay).
 
+Include the RCR as a key element of the model to convey the sea-iciness
+
 
 ## 1. Can we replicate Virus to Bactera Ratios by tuning parameters?
 
-In addition to understanding virally mediated carbon flow within sea ice brines, we want to undertand potential controls on the virus to bacteria (VBR) ratio in sea ice. [Observations of VBR within sea ice](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png) demonstrate high variability, and VBR can reach ratios fo 10,000 : 1 - much higher than the typical 10:1 or 100:1 values seen in seawater.
+We want to undertand potential controls on the virus to bacteria (VBR) ratio in sea ice. [Observations of VBR within sea ice](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png) demonstrate high variability, and VBR can reach ratios fo 10,000 : 1 - much higher than the typical 10:1 or 100:1 values seen in seawater.
 
 ![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png)
+
+We we run the experiments, we see either extinction or runaway 
+
 
 To test parameter ranges in VBR, we iterated through random ranges of parameters in the simplest possible system (insert EQs), calculating VBRs for each set of randomly chosen parameter ranges and comparing the calculated VBR distribution to the observed distributions in the above figure. When the calculated VBR distribution was considered "the same" as the observed VBR distribution (i.e., 95% by a [Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)), we collected that set of parameter values as a possible "solution"  - a set of parameter ranges which could be reflective of the true environment. 50 of these parameter ranges are plotted below, with the range shown for burst size, growth rate, and decay rate by individual lines and the average value in the circles. The ranges are ordered in ascending order, top to bottom, according to decay rate average.
 
