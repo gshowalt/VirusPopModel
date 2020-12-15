@@ -1,6 +1,10 @@
 # VirusPopModel
 
-### quick abstract here
+### Abstract 
+
+Observations indicating high concentrations of viruses within sea-ice brines relative to bacteria indicate that bacteriophage may play an outsized role in shaping host community structure and recycling organic matter within sea ice. However, while these high virus-to-bacteria ratios may be a function of active viral production and release, they may also be the result of slow virion decay due to the low temperature, high salinity conditions of sea-ice brines. Here, we present a mathematical model of virus–host interactions within sea-ice brines, one that uses viral and bacterial abundance data to interpret which mechanisms may most influence population dynamics. We also assess the existence and potential impact of a viral shunt within sea ice. Data from both field samples and laboratory isolates were used to achieve most likely parameter distributions for *in situ* communities, constraining the model to observed dynamics. Deeper understanding of the viral impact on sea-ice communities and the recycling of dissolved organic carbon within the ice will help to understand how these largely heterotrophic communities maintain activity under extreme conditions and further constrain Arctic carbon budgets through the seasons.
+
+# Introduction
 This project was written to demonstrate the potential contribution of bacteriophage viruses carbon cycling within sea ice brines. Though within the cold, hypersaline interstitial waters of sea ice microbial activity is reduced compared to more temperate waters, physical concentration may enhance the contact rate between bacteria and their viruses to an extent which allows significant viral infection to take place. 
 
 **We hypothesize that, as a result of physical concentration enhancing viral infection, viruses within sea ice brines may play an out-sized role in facilitating carbon cycling by contributing dissolved organic carbon to sea ice brine DOC pools in the form of lytic material.**
@@ -68,13 +72,14 @@ This indicates that the parameters given in literature may not be accurate for t
 In order to more accurately constrain parameters to the field observations, we wanted to compare calculate VBRs to observed values. As previously mentioned, observations of VBR within sea ice demonstrate high variability, and VBR can reach ratios fo 10,000 : 1 (refer to [Figure 1](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png). 
 
 
-The steady state solutions for the system were:
+The steady state solutions for the system were determined by hand and are given below:
 
 > B = detla/(phi*(beta - 1))
 
 > V = ((mu * N)/(N+Q) - d) / (gamma * phi)
 
 > N = (n * z * d * Q)/(alpha * (g-1) + n * z * (mu - d))
+
 
 
 
