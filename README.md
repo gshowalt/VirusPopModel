@@ -57,12 +57,6 @@ From this figure, we can see that growth rate and decay rate appear to tightly c
 
 The code for this step is given in [This file](https://github.com/gshowalt/VirusPopModel/blob/main/ParameterFitting.py)
 
-## 2. Can we replicate absoute abundance of viruses and bacteria by tuning parameters?
-
-We repeated the process from above against absolute abundance values, finding parameters that can replicate absolute abundance for both viruses and bacteria within KS metric > 0.05. 
-
-![FittoBoth](https://github.com/gshowalt/VirusPopModel/blob/main/FittoBoth.png)
-
 
 ## 3. How does viral infection contribute to carbon cycling within sea ice?
 First, we use values collected from literature to show that without physical concentration due to _brine concentrating factor_ (BCF), viral infection would have negligble impact on microbial populations and carbon cycling within sea ice.
