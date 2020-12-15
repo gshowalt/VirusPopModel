@@ -7,8 +7,17 @@ This project was written to demonstrate the potential contribution of bacterioph
 
 Here, we have built a simple population dynamic model using ordinary differential equations to demonstrate potential and constrain rates of viral infection and virally-mediated carbon cycling within sea ice brines. 
 
+
+### The system and its challenges
+[Observations of VBR within sea ice](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png) demonstrate high variability, and VBR can reach ratios fo 10,000 : 1 - much higher than the typical 10:1 or 100:1 values seen in seawater (Figure 1, below).
+
+![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png)
+
+
 ### Introducing the problem
 Challenges of understanding
+
+
 
 
 # Methods
@@ -35,21 +44,41 @@ dBdt = ((mu) * (N/(Q + N)) * B) - (phi * V * B) - d*B
 dVdt =  (beta * B * phi * V) - (phi * V * B) -  (m * V)
 ```
 
-These equations differ from those by Weitz or similar open-water models in that they _do not contain any nutrient inflow_ - instead, they consider the sea ice brine pore as a closed system. As a result - in the equations given above - nutrients are consumed in the given equations and only recycled through exudate and lysis (not through bacterial death or viral decay).
-
 Include the RCR as a key element of the model to convey the sea-iciness
 
 
+### Assumptions ###
+These equations differ from those by Weitz or similar open-water models in that they _do not contain any nutrient inflow_ - instead, they consider the sea ice brine pore as a closed system. As a result - in the equations given above - nutrients are consumed in the given equations and only recycled through exudate and lysis (not through bacterial death or viral decay).
+### Parameters ###
+Loosey bound parameters from literature - give the spreadsheet here
+
+### "Experiments ###
+
+
+# Results
 ## 1. Can we replicate Virus to Bactera Ratios by tuning parameters?
+We we run the experiments, we see either extinction of populations or runaway growth of virus populations, as shown below in Figure S1.
 
-We want to undertand potential controls on the virus to bacteria (VBR) ratio in sea ice. [Observations of VBR within sea ice](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png) demonstrate high variability, and VBR can reach ratios fo 10,000 : 1 - much higher than the typical 10:1 or 100:1 values seen in seawater.
-
-![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png)
-
-We we run the experiments, we see either extinction or runaway 
+![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_withRCRnoManipulation.png)
+ 
+This indicates that the parameters given in literature may not be accurate for the given system (or the equations themselves are missing a vital element of the system).
 
 
-To test parameter ranges in VBR, we iterated through random ranges of parameters in the simplest possible system (insert EQs), calculating VBRs for each set of randomly chosen parameter ranges and comparing the calculated VBR distribution to the observed distributions in the above figure. When the calculated VBR distribution was considered "the same" as the observed VBR distribution (i.e., 95% by a [Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)), we collected that set of parameter values as a possible "solution"  - a set of parameter ranges which could be reflective of the true environment. 50 of these parameter ranges are plotted below, with the range shown for burst size, growth rate, and decay rate by individual lines and the average value in the circles. The ranges are ordered in ascending order, top to bottom, according to adsorption rate (find the data [here](https://github.com/gshowalt/VirusPopModel/blob/main/TDParams_runs46.xlsx))
+
+In order to more accurately constrain parameters to the field observations, we wanted to compare calculate VBRs to observed values. As previously mentioned, observations of VBR within sea ice demonstrate high variability, and VBR can reach ratios fo 10,000 : 1 (refer to [Figure 1](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png). 
+
+
+The steady state solutions for the system were:
+
+> B = detla/(phi*(beta - 1))
+
+> V = ((mu * N)/(N+Q) - d) / (gamma * phi)
+
+> N = (n * z * d * Q)/(alpha * (g-1) + n * z * (mu - d))
+
+
+
+To test parameter ranges in VBR, we iterated through random ranges of parameters, calculating VBRs for each set of randomly chosen parameter ranges and comparing the calculated VBR distribution to the observed distributions in the above figure. When the calculated VBR distribution was considered "the same" as the observed VBR distribution (i.e., 95% by a [Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)), we collected that set of parameter values as a possible "solution"  - a set of parameter ranges which could be reflective of the true environment. 46 (I gave up waiting on the program, for the paper we can do more/an even number) of these parameter ranges are plotted below, with the range shown for burst size, growth rate, and decay rate by individual lines and the average value in the circles. The ranges are ordered in ascending order, top to bottom, according to adsorption rate (find the data [here](https://github.com/gshowalt/VirusPopModel/blob/main/TDParams_runs46.xlsx))
 
 ![Parameter Distributions](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_ParamFit_46.png)
 
@@ -58,7 +87,7 @@ From this figure, we can see that growth rate and decay rate appear to tightly c
 The code for this step is given in [This file](https://github.com/gshowalt/VirusPopModel/blob/main/TD_ParamFitting.py)
 
 
-## 3. How does viral infection contribute to carbon cycling within sea ice?
+## 2. How does viral infection contribute to carbon cycling within sea ice?
 First, we use values collected from literature to show that without physical concentration due to _brine concentrating factor_ (BCF), viral infection would have negligble impact on microbial populations and carbon cycling within sea ice.
 
 In order to make this demonstration, we first took our above equations coded into Python and applied biological values (i.e. beta (burst size), phi (adsorption rate), mu (bacterial growth rate), and delta (viral decay rate)) collected from literature and parameterized as function dependent on temperature  <sup>[1](###Notes)</sup>. Temperature-dependent values allowed us to 
@@ -80,6 +109,12 @@ Here's our figure of carbon cycling (1 = maximum carbon) as a function of temper
 
 ![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_withRCR_line.jpeg)
 
+# Discussion
+
+Adsorption
+Salt precipitation
+
+
 ### Notes
  <sup>1</sup> While values were parameterized from literature, unmanipulated parameters produced [run-away conditions](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Grid_withRCR_runaway.jpeg) of growth and infection at certain temperatures. 
 
@@ -87,9 +122,9 @@ Here's our figure of carbon cycling (1 = maximum carbon) as a function of temper
 
 #### notes for self (Max)
 Follow up from 11/30 mtg:
-1. create time-dependent plot - > does it behave as expected? Do we see a net loss of carbon due to *mV* term
+DONE 1. create time-dependent plot - > does it behave as expected? Do we see a net loss of carbon due to *mV* term
 2. Check on carbon cycling equations - do they still work if you pull them out of the odeint term
-3. make carbon cycling plot w/o breakdown into lysate/virions
+DONE 3. make carbon cycling plot w/o breakdown into lysate/virions
 4. think of most intuitive figure to show RCR relationship in carbon cycling figure
-5. compare parameter fitting for simple vs. complex eqs.
-6. craft narrative order of the story
+DONE 5. compare parameter fitting for simple vs. complex eqs.
+DONE 6. craft narrative order of the story
