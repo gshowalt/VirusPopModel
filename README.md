@@ -114,7 +114,9 @@ Secondly, we apply a **physical concentration parameter** to the model. This phy
 
 Here's our figure of carbon cycling (1 = maximum carbon) as a function of temperature **WITH** Brine Concentrating Factor
 
-![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_withRCR_line.jpeg)
+![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_RCR_line_withRCRline.jpeg)
+
+
 
 # Additional Considerations
 
