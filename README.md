@@ -84,19 +84,17 @@ The steady state solutions for the system were determined by hand and are given 
 
 > N = (n * z * d * Q)/(alpha * (g-1) + n * z * (mu - d))
 
-
-
-
-To test parameter ranges in VBR, we iterated through random ranges of parameters, calculating VBRs for each set of randomly chosen parameter ranges and comparing the calculated VBR distribution to the observed distributions in the above figure. When the calculated VBR distribution was considered "the same" as the observed VBR distribution (i.e., 95% by a [Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)), we collected that set of parameter values as a possible "solution"  - a set of parameter ranges which could be reflective of the true environment. 46 (I gave up waiting on the program, for the paper we can do more/an even number) of these parameter ranges are plotted below, with the range shown for burst size, growth rate, and decay rate by individual lines and the average value in the circles. The ranges are ordered in ascending order, top to bottom, according to adsorption rate (find the data [here](https://github.com/gshowalt/VirusPopModel/blob/main/TDParams_runs46.xlsx))
+With these steady state solutions, we then wanted to probe for parameter ranges which reproduce observed VBR. To test parameter ranges in VBR, we iterated through random ranges of parameters, calculating VBRs for each set of randomly chosen parameter ranges and comparing the calculated VBR distribution to the observed distributions in the above figure. When the calculated VBR distribution was considered "the same" as the observed VBR distribution (i.e., 95% by a [Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)), we collected that set of parameter values as a possible "solution"  - a set of parameter ranges which could be reflective of the true environment. 46 (I gave up waiting on the program, for the paper we can do more/an even number) of these parameter ranges are plotted below, with the range shown for burst size, growth rate, and decay rate by individual lines and the average value in the circles. The ranges are ordered in ascending order, top to bottom, according to adsorption rate (find the data [here](https://github.com/gshowalt/VirusPopModel/blob/main/TDParams_runs46.xlsx))
 
 ![Parameter Distributions](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_ParamFit_46.png)
 The code for this step is given in [This file](https://github.com/gshowalt/VirusPopModel/blob/main/TD_ParamFitting.py)
 
-NOTE TO SELF: this is just for the VBRs - but what about the absolute abundance? Can we re-run the equations to test that out and find a tighter parameter space?
+**We are also re-running this with absolute abundance fitting to narrow this range, which will hopefully allow us to better reproduce time-dependent dynamics**
+
+## 2. Do we want to explore lysis vs. lysogeny?
 
 
-
-## 2. How does viral infection contribute to carbon cycling within sea ice?
+## 3. How does viral infection contribute to carbon cycling within sea ice?
 First, we use values collected from literature to show that without physical concentration due to _brine concentrating factor_ (BCF), viral infection would have negligble impact on microbial populations and carbon cycling within sea ice.
 
 In order to make this demonstration, we first took our above equations coded into Python and applied biological values (i.e. beta (burst size), phi (adsorption rate), mu (bacterial growth rate), and delta (viral decay rate)) collected from literature and parameterized as function dependent on temperature  <sup>[1](###Notes)</sup>. Temperature-dependent values allowed us to 
@@ -130,7 +128,7 @@ Salt precipitation
 
 
 #### notes for self (Max)
-Follow up from 11/30 mtg:
+Follow up from 11/30 mtg --> postponed to Thursday
 DONE 1. create time-dependent plot - > does it behave as expected? Do we see a net loss of carbon due to *mV* term
 2. Check on carbon cycling equations - do they still work if you pull them out of the odeint term
 DONE 3. make carbon cycling plot w/o breakdown into lysate/virions
