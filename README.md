@@ -1,4 +1,4 @@
-# VirusPopModel
+# Modeled virus-bacteria dynamics in sea ice brines
 
 ### Abstract 
 
@@ -121,6 +121,7 @@ Here's our figure of carbon cycling (1 = maximum carbon) as a function of temper
 # Additional Considerations
 
 Adsorption
+
 Salt precipitation
 
 
@@ -129,7 +130,7 @@ Salt precipitation
 
 
 
-#### notes for self (Max)
+#### notes for Max
 Follow up from 11/30 mtg --> postponed to Thursday
 DONE 1. create time-dependent plot - > does it behave as expected? Do we see a net loss of carbon due to *mV* term
 2. Check on carbon cycling equations - do they still work if you pull them out of the odeint term
