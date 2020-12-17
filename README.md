@@ -14,6 +14,7 @@ When seawater freezes, both viruses and bacteria are incorporated into a porous 
 
 *Figure 1: Density plot of observed virus-to-bacteria ratios in sea ice brines (reds) and seawater (blues).*
 
+>**Still editing this
 >Despite the potentially important role of viruses within sea ice brines, little is known about the infection or population dynamics of phage-host systems in sea ice owing largely to logistical challenges of the environmental system. Beyond the obvious challenges of working in a cold environment relatively,  - direct field sampling : short time frame, destroys environment, patchy!, often limited by cost/time - laboratory analogues : imperfect example of complex systems, especially regarding viruses (biased toward infectivity)- omic investigations: large unknown, similar constraints of field-based work In the absence of robust community-led microbial science for Arctic sea ice, the described sampling constraints and 
 >Modeling is a good way to synthesize data we do/generate hypotheses for other types of observations.
 
