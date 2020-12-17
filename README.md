@@ -81,7 +81,7 @@ Collecting parameter values from literature produced a set of ranges given in [T
 
 When we run the experiments, we see either extinction of populations or runaway growth of virus populations, as shown below in Figure S1.
 
-![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_withRCRnoManipulation.png)
+![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_ParamFit_33_DensityPlot.png)
  
 This indicates that the parameters given in literature may not be accurate for the given system (or the equations themselves are missing a vital element of the system).
 
