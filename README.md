@@ -104,11 +104,8 @@ The code for this step is given in [This file](https://github.com/gshowalt/Virus
 
 **We are also re-running this with absolute abundance fitting to narrow this range, which will hopefully allow us to better reproduce time-dependent dynamics**
 
-## 2. Do we want to explore lysis vs. lysogeny?
 
-run fitting experiment w/ and w/o gamma term
-
-## 3. How does viral infection contribute to carbon cycling within sea ice?
+## 2. How does viral infection contribute to carbon cycling within sea ice?
 First, we use values collected from literature to show that without physical concentration due to _brine concentrating factor_ (BCF), viral infection would have negligble impact on microbial populations and carbon cycling within sea ice.
 
 In order to make this demonstration, we first took our above equations coded into Python and applied biological values (i.e. beta (burst size), phi (adsorption rate), mu (bacterial growth rate), and delta (viral decay rate)) collected from literature and parameterized as function dependent on temperature  <sup>[1](###Notes)</sup>. Temperature-dependent values allowed us to 
