@@ -71,8 +71,7 @@ Virus Population
 
 
 ### Parameters ###
-Loosley bound parameters from literature - give the spreadsheet here
-
+Parameters were collected by surveying literature
 
 # Results & Discussion
 ## 1. Can we replicate Virus to Bactera Ratios by tuning parameters?
