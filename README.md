@@ -29,18 +29,6 @@ When seawater freezes, both viruses and bacteria are incorporated into a porous 
 Here, we have built a simple population dynamic model using ordinary differential equations to demonstrate potential and constrain rates of viral infection and virally-mediated carbon cycling within sea ice brines. 
 
 
-### The system and its challenges
-[Observations of VBR within sea ice](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png) demonstrate high variability, and VBR can reach ratios fo 10,000 : 1 - much higher than the typical 10:1 or 100:1 values seen in seawater (Figure 1, below).
-
-![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png)
-
-
-### Introducing the problem
-Challenges of understanding
-
-
-
-
 # Methods
 
 ### The Equations ###
@@ -55,7 +43,7 @@ Bacterial Population
 Virus Population
 > dVdt = production (*lysis*) - adsorption - decay 
 
-> dVdt = β * φ * V * B -  1 * φ * V * B - δv * V 
+> dVdt = β * φ * V * B -  φ * V * B - δv * V 
 
 
 Which were then coded into Python 3:
@@ -65,11 +53,22 @@ dBdt = ((mu) * (N/(Q + N)) * B) - (phi * V * B) - d*B
 dVdt =  (beta * B * phi * V) - (phi * V * B) -  (m * V)
 ```
 
-Include the RCR as a key element of the model to convey the sea-iciness
-
-
 ### Assumptions ###
 These equations differ from those by Weitz or similar open-water models in that they _do not contain any nutrient inflow_ - instead, they consider the sea ice brine pore as a closed system. As a result - in the equations given above - nutrients are consumed in the given equations and only recycled through exudate and lysis (not through bacterial death or viral decay).
+
+We made use of an existing parameterize of relative contact rate (RCR) produced by Wells and Deming (2006b), which calcualted how often viruses should encounter bacteria within sea ice as a result of increased physical concentration and decreased particle diffusion compared to warmer seawater conditions. This figure is given in filed [WellsRCR](https://github.com/gshowalt/VirusPopModel/blob/main/WellsRCR.png).
+
+Bacterial Population
+> dBdt = growth - infection - death 
+
+> dBdt = µ * N -  **RCR** * φ * V * B - δb * B 
+
+Virus Population
+> dVdt = production (*lysis*) - adsorption - decay 
+
+> dVdt = β **RCR** * φ * V * B -  **RCR** * φ * V * B - δv * V 
+
+
 ### Parameters ###
 Loosey bound parameters from literature - give the spreadsheet here
 
