@@ -92,7 +92,7 @@ In order to more accurately constrain parameters to the field observations, we w
 
 The steady state solutions for the system were determined by hand and are given below:
 
-> B = detla/(phi*(beta - 1))
+> B = delta/(phi*(beta - 1))
 
 > V = ((mu * N)/(N+Q) - d) / (gamma * phi)
 
