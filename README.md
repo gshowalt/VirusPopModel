@@ -67,13 +67,11 @@ Bacterial Population
 Virus Population
 > dVdt = production (*lysis*) - adsorption - decay 
 
-> dVdt = β **RCR** * φ * V * B -  **RCR** * φ * V * B - δv * V 
+> dVdt = β * **RCR** * φ * V * B -  **RCR** * φ * V * B - δv * V 
 
 
 ### Parameters ###
-Loosey bound parameters from literature - give the spreadsheet here
-
-### "Experiments ###
+Loosley bound parameters from literature - give the spreadsheet here
 
 
 # Results & Discussion
@@ -110,6 +108,7 @@ The code for this step is given in [This file](https://github.com/gshowalt/Virus
 
 ## 2. Do we want to explore lysis vs. lysogeny?
 
+run fitting experiment w/ and w/o gamma term
 
 ## 3. How does viral infection contribute to carbon cycling within sea ice?
 First, we use values collected from literature to show that without physical concentration due to _brine concentrating factor_ (BCF), viral infection would have negligble impact on microbial populations and carbon cycling within sea ice.
