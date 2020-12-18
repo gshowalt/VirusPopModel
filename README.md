@@ -149,3 +149,8 @@ DONE 3. make carbon cycling plot w/o breakdown into lysate/virions
 4. think of most intuitive figure to show RCR relationship in carbon cycling figure
 DONE 5. compare parameter fitting for simple vs. complex eqs.
 DONE 6. craft narrative order of the story
+
+Follow up from 12/17 mtg -
+1. play with mathematica to get ss solutions
+2. quasi eq? investigate TD dynamics which should run to exctintion
+3. try closing system to investigate dynamics
