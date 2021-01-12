@@ -160,6 +160,7 @@ Follow up from 12/17 mtg -
 2. run td over several time frames - do they match ss expectations?
 3. come w/ figures ready for 01/18:
       a. time dependent
+      
       [TD With RCR](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_withRCR_12Jan.png)
       
       [TD Without RCR](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_withoutRCR_12Jan.png)
@@ -167,6 +168,7 @@ Follow up from 12/17 mtg -
       [Dynamics Comparison](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_bothDyn_12Jan_b.png)
       
       [VBR Comparison](https://github.com/gshowalt/VirusPopModel/upload/main)
+      
       b. 
       
   
