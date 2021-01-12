@@ -162,7 +162,7 @@ Follow up from 12/17 mtg -
       a. time dependent
       ![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_withRCR_12Jan.png)
       ![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_withoutRCR_12Jan.png)
-
+      ![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_bothDyn_12Jan_b.png)
       b. 
       
   
