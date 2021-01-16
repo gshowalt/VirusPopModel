@@ -74,6 +74,35 @@ Virus Population
 Parameters were collected by surveying literature
 
 # Results & Discussion
+
+## 1. Time Dependent Dynamics
+
+![Fig. 1_No RCR](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_16Jan_noRCR_comparison.png)
+
+Showing both with and without rcr for a particular temperature:
+
+![Fig. 1_No RCR](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_16Jan_all_comparison.png)
+
+And to see both of them:
+![Dynamics Comparison](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_bothDyn_12Jan_b.png)
+
+## 2. Steady state behavior runs to zero
+
+The steady state solutions for the system were determined by hand and are given below:
+
+> B = delta/(phi*(beta - 1))
+
+> V = ((mu * N)/(N+Q) - d) / (gamma * phi)
+
+> N = (n * z * d * Q)/(alpha * (g-1) + n * z * (mu - d))
+
+## 3. Parameter estimation
+
+## 4. Lysis-lysogeny
+
+## 5. Carbon cycling
+
+
 ## 1. Can we replicate Virus to Bactera Ratios by tuning parameters?
 
 Collecting parameter values from literature produced a set of ranges given in [Table 1](https://github.com/gshowalt/VirusPopModel/blob/main/Table1.png) (do we want to include this?).
@@ -90,13 +119,7 @@ This indicates that the parameters given in literature may not be accurate for t
 In order to more accurately constrain parameters to the field observations, we wanted to compare calculate VBRs to observed values. As previously mentioned, observations of VBR within sea ice demonstrate high variability, and VBR can reach ratios fo 10,000 : 1 (refer to [Figure 1](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png). 
 
 
-The steady state solutions for the system were determined by hand and are given below:
 
-> B = delta/(phi*(beta - 1))
-
-> V = ((mu * N)/(N+Q) - d) / (gamma * phi)
-
-> N = (n * z * d * Q)/(alpha * (g-1) + n * z * (mu - d))
 
 With these steady state solutions, we then wanted to probe for parameter ranges which reproduce observed VBR. To test parameter ranges in VBR, we iterated through random ranges of parameters, calculating VBRs for each set of randomly chosen parameter ranges and comparing the calculated VBR distribution to the observed distributions in the above figure. When the calculated VBR distribution was considered "the same" as the observed VBR distribution (i.e., 95% by a [Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)), we collected that set of parameter values as a possible "solution"  - a set of parameter ranges which could be reflective of the true environment. 46 (I gave up waiting on the program, for the paper we can do more/an even number) of these parameter ranges are plotted below, with the range shown for burst size, growth rate, and decay rate by individual lines and the average value in the circles. The ranges are ordered in ascending order, top to bottom, according to adsorption rate (find the data [here](https://github.com/gshowalt/VirusPopModel/blob/main/TDParams_runs46.xlsx))
 
