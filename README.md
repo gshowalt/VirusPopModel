@@ -86,9 +86,11 @@ Showing both with and without rcr for a particular temperature:
 And to see both of them:
 ![Dynamics Comparison](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_bothDyn_12Jan_b.png)
 
-And here's the phase potrait, where the black dot marker is the 10,000 hour mark
+And here's the phase portrait for both populations and nutrient concentration, where the black dot marker is the 10,000 hour mark and faded, dotted lines show the populations/nutrient concentrations when no recycling from lysis is invoked.
 
-![Phase Portrait](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_noannot.png)
+![Phase Portrait](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_noannot_17Jan.png)
+
+![Phase Portrait, Nuts](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_nuts_17Jan.png)
 
 ## 2. Steady state behavior runs to zero
 
