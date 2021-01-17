@@ -88,7 +88,7 @@ And to see both of them:
 
 And here's the phase potrait
 
-![Phase Portrait](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait.png)
+![Phase Portrait](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_noannot.png)
 
 ## 2. Steady state behavior runs to zero
 
