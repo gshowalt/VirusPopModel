@@ -86,6 +86,10 @@ Showing both with and without rcr for a particular temperature:
 And to see both of them:
 ![Dynamics Comparison](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_bothDyn_12Jan_b.png)
 
+And here's the phase potrait
+
+![Phase Portrait](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait.png)
+
 ## 2. Steady state behavior runs to zero
 
 The steady state solutions for the system were determined by hand and are given below:
