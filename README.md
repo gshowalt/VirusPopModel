@@ -84,7 +84,7 @@ Showing both with and without rcr for a particular temperature:
 ![Fig. 1_No RCR](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_16Jan_all_comparison.png)
 
 And to see both of them:
-![Dynamics Comparison](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_bothDyn_12Jan_b.png)
+![Dynamics Comparison](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_bothDyn_17Jan.png)
 
 And here's the phase portrait for both populations and nutrient concentration, where the black dot marker is the 10,000 hour mark and faded, dotted lines show the populations/nutrient concentrations when no recycling from lysis is invoked.
 
