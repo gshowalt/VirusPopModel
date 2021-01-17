@@ -86,7 +86,7 @@ Showing both with and without rcr for a particular temperature:
 And to see both of them:
 ![Dynamics Comparison](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_bothDyn_12Jan_b.png)
 
-And here's the phase potrait
+And here's the phase potrait, where the black dot marker is the 10,000 hour mark
 
 ![Phase Portrait](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_noannot.png)
 
