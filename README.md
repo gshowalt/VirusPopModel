@@ -99,7 +99,7 @@ If we were to look at relative lytic contribution to recycled material across al
 
 ** INSERT FIGURE FROM DISSERTATION ***
 
-With this in mind, we can translate our bacterial and viral populations into carbon equivalents to estimate relative and absolute abundance 
+With this in mind, we can translate our bacterial and viral populations into carbon equivalents to estimate relative and absolute amount of organic carbon recycled.
 
 The code for this step is uploaded to the repository as [CarbonEquiv_noRCR.py](https://github.com/gshowalt/VirusPopModel/edit/main/Code/CarbonEquiv_Talmy.py) .
 
