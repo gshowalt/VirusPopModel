@@ -94,9 +94,13 @@ In the left panel with no physical concentration, the lack of viral infection is
 
 ![Phase Portrait, Nuts](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_nuts_17Jan.png)
 
-We can pull out the relative contribution of lytic recycling by comparing the final nutrient concentration the runs at each temperature, subtracting the nutrient concentration of the run _without lytic recycling_ to see what percent of the total recycled nutrients comes from lytic material after 10,000 hours.
+We can pull out the relative contribution of lytic recycling by comparing the final nutrient concentration the runs at each temperature, subtracting the nutrient concentration of the run _without lytic recycling_ to see what percent of the total recycled nutrients comes from lytic material after 10,000 hours, as shown in the figure below. We can see that lysis contributes a large fraction of the total recycled material for both systems (with and without physical concentration), but the relative importance of lytic material depends on temperature. At colder temperatures (below –9˚C), the system with physical concentration factor shows a higher relative input of lytic material, which is consistent with our observations that there is less bacterial infection at lower temperatures if no physical concentration is included. This system is modeled assuming nearly all lytic material (99%) is recycled, and cells exude 10% of all material they take up back into a pool of recycled organic material.
 
-![Phase Portrait, Nuts](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_nuts_17Jan.png)
+![Phase Portrait, Nuts](https://github.com/gshowalt/VirusPopModel/blob/main/Lytic%20contribution_17Jan.png)
+
+If we were to look at relative lytic contribution to recycled material across all possible parameter space, we can co-vary lytic and exudate material fractions to invesitgate if this patterns holds. Indeed, we see that at the "moderate" temperature ranges ( between –12˚C and –4˚C), lysis is more important relative to exudate, while the converse is true at endpoint temperatures (-13˚C and -2˚C).
+
+** INSERT FIGURE FROM DISSERTATION ***
 
 
 
