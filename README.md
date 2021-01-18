@@ -15,7 +15,6 @@ When seawater freezes, both viruses and bacteria are incorporated into a porous 
 *Figure 1: Density plot of observed virus-to-bacteria ratios in sea ice brines (reds) and seawater (blues).*
 
 
-
 **We hypothesize that, as a result of physical concentration enhancing viral infection, viruses within sea ice brines may play an out-sized role in facilitating carbon cycling by contributing dissolved organic carbon to sea ice brine DOC pools in the form of lytic material.**
 
 Here, we have built a simple population dynamic model using ordinary differential equations to demonstrate potential and constrain rates of viral infection and virally-mediated carbon cycling within sea ice brines. 
@@ -89,9 +88,17 @@ First, this figure represents the phase portrait of bacterial and viral populati
 
 The pattern of these plots generally reflects the expected semi-cyclic behavior of both bacterial and viral populations within the system: a increase in bacterial population (movement -->) leads to a growth in viral population (movement ^), which inturn leades to a crash of the bacterial population (<--), creating a spiral/nautilis-like pattern. Two major execptions are obvious, both occuring at low temperature. In both plots, there is little change in bacterial population at low temperatures due to growth, indicated by little horizontal movement of the plots (especially towards positive bacterial growth). More noticably, without physical concentration increasing viral-host encounters (left panel), there is minimal infection (no vertical change) and indeed little change in either bacterial or viral populations below –6˚C.This is not observed in the right panel, where physical concentration allows for enhanced bacterial infection and therefor higher viral populations. Comparing these figures to the original VBR density plot (above), we see that including RCR creates time-dependent populations which largely overlap the observed VBR space.
 
-When we compared bacterial populations to nutrient concentration in the phase plane, we can again see the importance of physical concentration, as well as the effects of lytic recycling within the system (below). 
+When we compared bacterial populations to nutrient concentration in the phase plane, we can again see the importance of physical concentration, as well as the effects of lytic recycling within the system (below). Again, the left panel represents the system run without physical concentration due to freezing, while the right panel represents the system with physical concentration. In both panels, the faded colored lines represent the same systems without lytic recycling.
+
+In the left panel with no physical concentration, the lack of viral infection is obvious at temperatures below –6˚C. Minimal horiztonal change in these lines indicates little growth or loss of cells due to death or lysis. Conversely, we can see the signal of viral infection in the right panel with physical concentration coefficient included: as lines move from t0 toward tend, the first fall vertically (representing initial uptake) with a horizontal component (representing growth), but sharply move left (bacterial loss) with a vertical component (lysis). The difference between the solid and spotted lines indicate the relative input of lytic recycling compared to other sources of organic recycling (viral decay, bacteria exudation). It is clear when comparing final nutrient concentrations with and without lytic recycling (on solid or faded dotted lines, respetively) that the nutrient concentration after 10,000 hours is higher with lytic recycling included, and differentially so comparing the left and right panels. 
 
 ![Phase Portrait, Nuts](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_nuts_17Jan.png)
+
+We can pull out the relative contribution of lytic recycling by comparing the final nutrient concentration the runs at each temperature, subtracting the nutrient concentration of the run _without lytic recycling_ to see what percent of the total recycled nutrients comes from lytic material after 10,000 hours.
+
+![Phase Portrait, Nuts](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_nuts_17Jan.png)
+
+
 
 ## 2. Steady state behavior runs to zero
 
