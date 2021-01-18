@@ -14,16 +14,7 @@ When seawater freezes, both viruses and bacteria are incorporated into a porous 
 
 *Figure 1: Density plot of observed virus-to-bacteria ratios in sea ice brines (reds) and seawater (blues).*
 
->Still editing this
 
->Despite the potentially important role of viruses within sea ice brines, little is known about the infection or population dynamics of phage-host systems in sea ice owing largely to logistical challenges of the environmental system. Beyond the obvious challenges of working in a cold environment relatively,  - direct field sampling : short time frame, destroys environment, patchy!, often limited by cost/time - laboratory analogues : imperfect example of complex systems, especially regarding viruses (biased toward infectivity)- omic investigations: large unknown, similar constraints of field-based work In the absence of robust community-led microbial science for Arctic sea ice, the described sampling constraints and 
->Modeling is a good way to synthesize data we do/generate hypotheses for other types of observations.
-
-
-
->While phototrophs, largely diatoms, contribute the most biomass to these communities in sunlit seasons, heterotrophic bacteria, largely Flavobacteria and Gammaproteobacteria (up to 75% of the community), can achieve high densities in sea ice, up to 10^7 cells per milliliter of brine (Boetius et al., 2015). Evidence suggests that heterotrophic bacteria at low temperatures such as those experienced in sea ice require high concentrations of organic substrate to maintain activity and sustain growth (Pomeroy and Wiebe, 2001). In sunlit seasons, organic carbon is readily available, because net autotrophic sea ice microbial communities produce up to hundreds of milligrams of carbon per meter squared per day (Mikkelsen et al., 2008; Boetius et al., 2013). However, wintertime SIMCOs, dominated by heterotrophic bacteria (Deming, 2010; Boetius et al., 2015), must rely on organic substrates trapped and concentrated in the brine during the freezing process (Thomas et al., 1995; 2001; Meiners & Michel, 2017).  How viruses may influence organic matter recycling within sea-ice brines, especially in bacterially dominated sea ice, is unknown.
-
-is this the pace to include background on relative contact rate?
 
 **We hypothesize that, as a result of physical concentration enhancing viral infection, viruses within sea ice brines may play an out-sized role in facilitating carbon cycling by contributing dissolved organic carbon to sea ice brine DOC pools in the form of lytic material.**
 
@@ -55,7 +46,7 @@ dVdt =  (beta * B * phi * V) - (phi * V * B) -  (m * V)
 ```
 
 ### Assumptions ###
-These equations differ from those by Weitz or similar open-water models in that they _do not contain any nutrient inflow_ - instead, they consider the sea ice brine pore as a closed system. As a result - in the equations given above - nutrients are consumed in the given equations and only recycled through exudate and lysis (not through bacterial death or viral decay).
+These equations differ from those by Weitz or similar open-water models in that they _do not contain any nutrient inflow_ - instead, they consider the sea ice brine pore as a closed system. As a result - in the equations given above - nutrients are consumed in the given equations and only recycled through exudate and lysis (not through bacterial death).
 
 We made use of an existing parameterize of relative contact rate (RCR) produced by Wells and Deming (2006b), which calcualted how often viruses should encounter bacteria within sea ice as a result of increased physical concentration and decreased particle diffusion compared to warmer seawater conditions. This figure is given in filed [WellsRCR](https://github.com/gshowalt/VirusPopModel/blob/main/WellsRCR.png).
 
@@ -75,20 +66,29 @@ Parameters were collected by surveying literature
 
 # Results & Discussion
 
-## 1. Time Dependent Dynamics
+## 1. Basic system behavior
 
+When the system is run with values taken from literature, given in [Table 1](https://github.com/gshowalt/VirusPopModel/blob/main/Table1.png), we can see time-dependent dynamics. 
+
+First we run the system with **no relative contact rate parameter** at a particular temperature (–6˚C) to demonstrate how the system behaviors either with or without the presence of lytically-derived nutrient recycling (below). This figure shows without including the relative contact rate coefficient to increase contact between viruses and bacteria, there is relatively little change in population dynamics of either viruses or bacteria after a long period of time (10,000 hours or about 13 months).
 ![Fig. 1_No RCR](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_16Jan_noRCR_comparison.png)
 
-Showing both with and without rcr for a particular temperature:
 
+This figure is here compared to the same set equations, this time **with relative contact rate included**. Here, you can see that the populations of both viruses and bacteria are more dynamic: more viruses are produced as the result of increase contact rate. Again, we include a comparison of the system both in the absence (left) and presence (right panel) of lytic recycling. With lytic recycling at –6˚C, there is a small increase in the bacterial population after 10,000 hours compared to without.
 ![Fig. 1_No RCR](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_16Jan_all_comparison.png)
 
-And to see both of them:
+Finally, we can look at all of the systems as a function of temperature. Here, lytic recycling is included in each plot, with the top panels showing the system _without relative contact rate_ and the bottom two panels showing the system _with relative contact rate_, both for bacteria (left panels) and viruses (right panels). This comparison demonstrates that the inclusion of an increased relative contact rate, as shown in the lower two panels, manifests as increased viral populations over time within the middling temperature ranges (–3 to –12˚C). Compare these panels to the system without physical concentration (top panels), in which viral populations are largely driven to zero.
 ![Dynamics Comparison](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_bothDyn_17Jan.png)
 
-And here's the phase portrait for both populations and nutrient concentration, where the black dot marker is the 10,000 hour mark and faded, dotted lines show the populations/nutrient concentrations when no recycling from lysis is invoked.
+These relationships can be easily visualized when looking at time-dependant behavior of the system between 0 and 10,000 hours in the phase plane, as plotted below.
+
+First, this figure represents the phase portrait of bacterial and viral populations across the temperature spectrum for the equations run without relative contact rate coefficient (left panel, plasma colorscheme) and with relative contact rate coefficient (right panel, viridis colorscheme). Phase plots begin at the un-marked end of the line and run down the plot, ending at the solid black point (10,000 hours). Faded colored plots represent the same system without lytic recycling, while the gray spotted line shows VBR.
 
 ![Phase Portrait](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_noannot_17Jan.png)
+
+You can see several takeaways from this plot. 
+
+
 
 ![Phase Portrait, Nuts](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_nuts_17Jan.png)
 
@@ -108,13 +108,6 @@ The steady state solutions for the system were determined by hand and are given 
 
 ## 5. Carbon cycling
 
-
-## 1. Can we replicate Virus to Bactera Ratios by tuning parameters?
-
-Collecting parameter values from literature produced a set of ranges given in [Table 1](https://github.com/gshowalt/VirusPopModel/blob/main/Table1.png) (do we want to include this?).
-
-
-When we run the experiments, we see either extinction of populations or runaway growth of virus populations, as shown below in Figure S1.
 
 ![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_ParamFit_33_DensityPlot.png)
  
