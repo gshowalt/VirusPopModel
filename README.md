@@ -60,9 +60,6 @@ Virus Population
 > dVdt = β * **RCR** * φ * V * B -  **RCR** * φ * V * B - δv * V 
 
 
-### Parameters ###
-Parameters were collected by surveying literature
-
 # Results & Discussion
 
 ## 1. Basic system behavior
@@ -71,7 +68,6 @@ When the system is run with values taken from literature, given in [Table 1](htt
 
 First we run the system with **no relative contact rate parameter** at a particular temperature (–6˚C) to demonstrate how the system behaviors either with or without the presence of lytically-derived nutrient recycling (below). This figure shows without including the relative contact rate coefficient to increase contact between viruses and bacteria, there is relatively little change in population dynamics of either viruses or bacteria after a long period of time (10,000 hours or about 13 months).
 ![Fig. 1_No RCR](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_16Jan_noRCR_comparison.png)
-
 
 This figure is here compared to the same set equations, this time **with relative contact rate included**. Here, you can see that the populations of both viruses and bacteria are more dynamic: more viruses are produced as the result of increase contact rate. Again, we include a comparison of the system both in the absence (left) and presence (right panel) of lytic recycling. With lytic recycling at –6˚C, there is a small increase in the bacterial population after 10,000 hours compared to without.
 ![Fig. 1_No RCR](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_16Jan_all_comparison.png)
@@ -83,12 +79,13 @@ These relationships can be easily visualized when looking at time-dependant beha
 
 First, this figure represents the phase portrait of bacterial and viral populations across the temperature spectrum for the equations run without relative contact rate coefficient (left panel, plasma colorscheme) and with relative contact rate coefficient (right panel, viridis colorscheme). Phase plots begin at the un-marked end of the line and run down the plot, ending at the solid black point (10,000 hours). Faded colored plots represent the same system without lytic recycling, while the gray spotted line shows VBR.
 
-
 ![Phase Portrait](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_noannot_17Jan.png)
 
 The pattern of these plots generally reflects the expected semi-cyclic behavior of both bacterial and viral populations within the system: a increase in bacterial population (movement -->) leads to a growth in viral population (movement ^), which inturn leades to a crash of the bacterial population (<--), creating a spiral/nautilis-like pattern. Two major execptions are obvious, both occuring at low temperature. In both plots, there is little change in bacterial population at low temperatures due to growth, indicated by little horizontal movement of the plots (especially towards positive bacterial growth). More noticably, without physical concentration increasing viral-host encounters (left panel), there is minimal infection (no vertical change) and indeed little change in either bacterial or viral populations below –6˚C.This is not observed in the right panel, where physical concentration allows for enhanced bacterial infection and therefor higher viral populations. Comparing these figures to the original VBR density plot (above), we see that including RCR creates time-dependent populations which largely overlap the observed VBR space.
 
-When we compared bacterial populations to nutrient concentration in the phase plane, we can again see the importance of physical concentration, as well as the effects of lytic recycling within the system (below). Again, the left panel represents the system run without physical concentration due to freezing, while the right panel represents the system with physical concentration. In both panels, the faded colored lines represent the same systems without lytic recycling.
+## 2. Organic material cycling within the system
+
+When we compared bacterial populations to nutrient/organic material concentration in the phase plane, we can again see the importance of physical concentration, as well as the effects of lytic recycling within the system (below). Again, the left panel represents the system run without physical concentration due to freezing, while the right panel represents the system with physical concentration. In both panels, the faded colored lines represent the same systems without lytic recycling.
 
 In the left panel with no physical concentration, the lack of viral infection is obvious at temperatures below –6˚C. Minimal horiztonal change in these lines indicates little growth or loss of cells due to death or lysis. Conversely, we can see the signal of viral infection in the right panel with physical concentration coefficient included: as lines move from t0 toward tend, the first fall vertically (representing initial uptake) with a horizontal component (representing growth), but sharply move left (bacterial loss) with a vertical component (lysis). The difference between the solid and spotted lines indicate the relative input of lytic recycling compared to other sources of organic recycling (viral decay, bacteria exudation). It is clear when comparing final nutrient concentrations with and without lytic recycling (on solid or faded dotted lines, respetively) that the nutrient concentration after 10,000 hours is higher with lytic recycling included, and differentially so comparing the left and right panels. 
 
@@ -102,25 +99,13 @@ If we were to look at relative lytic contribution to recycled material across al
 
 ** INSERT FIGURE FROM DISSERTATION ***
 
-
-
-
-
-## 2. How does viral infection contribute to carbon cycling within sea ice?
-First, we use values collected from literature to show that without physical concentration due to _brine concentrating factor_ (BCF), viral infection would have negligble impact on microbial populations and carbon cycling within sea ice.
-
-In order to make this demonstration, we first took our above equations coded into Python and applied biological values (i.e. beta (burst size), phi (adsorption rate), mu (bacterial growth rate), and delta (viral decay rate)) collected from literature and parameterized as function dependent on temperature  <sup>[1](###Notes)</sup>. Temperature-dependent values allowed us to 
+With this in mind, we can translate our bacterial and viral populations into carbon equivalents to estimate relative and absolute abundance 
 
 The code for this step is uploaded to the repository as [CarbonEquiv_noRCR.py](https://github.com/gshowalt/VirusPopModel/edit/main/Code/CarbonEquiv_Talmy.py) .
 
 Here's our figure of carbon cycling (1 = maximum carbon) as a function of temperature **WITHOUT** Brine Concentrating Factor
 
 ![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_noRCR_line.jpeg)
-
-
-
-
-
 
 Secondly, we apply the **physical concentration parameter** to the model. This physical concentration, a result of tightly constricted pore space within sea ice crystals, has been suggested to increase the _relative contact rate (RCR)_ of viruses and bacteria within sea ice brines compared to underlying seawater. The relationship between RCR and temperature, calculated by Wells and Deming 2006b, is shown in the repository file [WellsRCR.png](https://github.com/gshowalt/VirusPopModel/blob/main/WellsRCR.png) 
 
@@ -130,38 +115,26 @@ Here's our figure of carbon cycling (1 = maximum carbon) as a function of temper
 
 
 
-# Additional Considerations
-
-Adsorption
-
-Salt precipitation
-
 
 ### Notes
- <sup>1</sup> While values were parameterized from literature, unmanipulated parameters produced [run-away conditions](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Grid_withRCR_runaway.jpeg) of growth and infection at certain temperatures. 
+ <sup>1</sup> While values were parameterized from literature, unmanipulated parameters produced [run-away conditions](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Grid_withRCR_runaway.jpeg) of growth and infection at certain temperatures prior to parameter fitting using the method detail in S1.
 
 
 
 ### supplemental information
 
-## Parameter fitting
+## S1 Parameter fitting
 
 ![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_ParamFit_33_DensityPlot.png)
  
-
 In order to more accurately constrain parameters to the field observations, we wanted to compare calculate VBRs to observed values. As previously mentioned, observations of VBR within sea ice demonstrate high variability, and VBR can reach ratios fo 10,000 : 1 (refer to [Figure 1](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png). 
-
-
-
 
 With these steady state solutions, we then wanted to probe for parameter ranges which reproduce observed VBR. To test parameter ranges in VBR, we iterated through random ranges of parameters, calculating VBRs for each set of randomly chosen parameter ranges and comparing the calculated VBR distribution to the observed distributions in the above figure. When the calculated VBR distribution was considered "the same" as the observed VBR distribution (i.e., 95% by a [Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)), we collected that set of parameter values as a possible "solution"  - a set of parameter ranges which could be reflective of the true environment. 46 (I gave up waiting on the program, for the paper we can do more/an even number) of these parameter ranges are plotted below, with the range shown for burst size, growth rate, and decay rate by individual lines and the average value in the circles. The ranges are ordered in ascending order, top to bottom, according to adsorption rate (find the data [here](https://github.com/gshowalt/VirusPopModel/blob/main/TDParams_runs46.xlsx))
 
 The code for this step is given in [This file](https://github.com/gshowalt/VirusPopModel/blob/main/Code/TD_ParamFitting.py)
 
 
-
-
-## 2. Steady state behavior runs to zero
+## S2 Steady state behavior 
 
 The steady state solutions for the system were determined by hand and are given below:
 
@@ -171,41 +144,5 @@ The steady state solutions for the system were determined by hand and are given 
 
 > N = (n * z * d * Q)/(alpha * (g-1) + n * z * (mu - d))
 
-## 3. Parameter estimation
 
-## 4. Lysis-lysogeny
-
-## 5. Carbon cycling
-
-
-#### notes for Max
-Follow up from 11/30 mtg --> postponed to Thursday
-DONE 1. create time-dependent plot - > does it behave as expected? Do we see a net loss of carbon due to *mV* term
-2. Check on carbon cycling equations - do they still work if you pull them out of the odeint term
-DONE 3. make carbon cycling plot w/o breakdown into lysate/virions
-4. think of most intuitive figure to show RCR relationship in carbon cycling figure
-DONE 5. compare parameter fitting for simple vs. complex eqs.
-DONE 6. craft narrative order of the story
-
-Follow up from 12/17 mtg -
-1. play with mathematica to get ss solutions
-2. quasi eq? investigate TD dynamics which should run to exctintion
-3. try closing system to investigate dynamics
-
-1/04
-1. mathematica solve ss system
-2. run td over several time frames - do they match ss expectations?
-3. come w/ figures ready for 01/18:
-      a. time dependent
-      
-      [TD With RCR](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_withRCR_12Jan.png)
-      
-      [TD Without RCR](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_withoutRCR_12Jan.png)
-      
-      [Dynamics Comparison](https://github.com/gshowalt/VirusPopModel/blob/main/TimeDependent_bothDyn_12Jan_b.png)
-      
-      [VBR Comparison](https://github.com/gshowalt/VirusPopModel/upload/main)
-      
-      b. 
-      
   
