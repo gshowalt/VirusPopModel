@@ -84,9 +84,10 @@ These relationships can be easily visualized when looking at time-dependant beha
 
 First, this figure represents the phase portrait of bacterial and viral populations across the temperature spectrum for the equations run without relative contact rate coefficient (left panel, plasma colorscheme) and with relative contact rate coefficient (right panel, viridis colorscheme). Phase plots begin at the un-marked end of the line and run down the plot, ending at the solid black point (10,000 hours). Faded colored plots represent the same system without lytic recycling, while the gray spotted line shows VBR.
 
+
 ![Phase Portrait](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_noannot_17Jan.png)
 
-You can see several takeaways from this plot. 
+The pattern of these plots generally reflects the expected semi-cyclic behavior of both bacterial and viral populations within the system: a increase in bacterial population (movement -->) leads to a growth in viral population (movement ^), which inturn leades to a crash of the bacterial population (<--), creating a spiral/nautilis-like pattern. Two major execptions are obvious, both occuring at low temperature. In both plots, there is little change in bacterial population at low temperatures due to growth, indicated by little horizontal movement of the plots (especially towards positive bacterial growth). More noticably, without physical concentration increasing viral-host encounters (left panel), there is minimal infection (no vertical change) and indeed little change in either bacterial or viral populations below –6˚C.This is not observed in the right panel, where physical concentration allows for enhanced bacterial infection and therefor higher viral populations. Comparing these figures to the original VBR density plot (above) also shows considerable overlap of space in the right panel.
 
 
 
