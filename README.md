@@ -10,7 +10,7 @@ Bacteriophage, viruses which infect bacteria, are numerically dominant within th
 
 When seawater freezes, both viruses and bacteria are incorporated into a porous matrix of briney liquid. Within this brine network of sea ice, microbial communities experience  extremes of temperature (from near –40˚C to 0˚C) and salinity (from near 240 ppt to 0 ppt salts), as well as physical concentration leading to cell densities up to 10^7 cells per milliliter of brine (Ewert & Deming, 2013; Boetius et al., 2015). Field observations of viral and bacterial abundances in the form of virus-to-bacteria ratios within sea ice, which approach a ratio of 10,000-to-1, can greatly exceed those of source seawater (Collins & Deming, 2011; Figure 1), which often range between 1 and 100 viruses per bacterium (Knowles et al., 2016; Wigington, et al., 2016; Parikka et al., 2017). These very high ratios have in turn led to the suggestion that viruses must be produced within sea-ice brines at rates well beyond those observed in seawater (Collins & Deming, 2011; Wigington et al., 2016). The primary argument supporting this suggestion is that tight physical coupling between virus and host within a brine pore favors increased infection rates. Indeed, as a result of the physical freeze-concentration effect and reduced viscosity of subzero brines, the relative contact rate of viruses and bacteria within brines has been calculated to be up to 1,000 times greater than in seawater, depending on temperature (Wells & Deming, 2006a). 
 
-![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/VBRplot.png)
+![Fig](https://github.com/gshowalt/VirusPopModel/blob/main/VBRplot_2.png)
 
 *Figure 1: Density plot of observed virus-to-bacteria ratios in sea ice brines (reds) and seawater (blues).*
 
