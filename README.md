@@ -66,7 +66,7 @@ Virus Population
 
 When the system is run with values taken from literature, given in [Table 1](https://github.com/gshowalt/VirusPopModel/blob/main/Table1.png), we can see time-dependent dynamics. 
 
-!(Fig)[https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_noannot_21Jan.png]
+![Figure 1](https://github.com/gshowalt/VirusPopModel/blob/main/PhasePortrait_noannot_21Jan.png)
 
 These relationships can be easily visualized when looking at time-dependant behavior of the system between 0 and 10,000 hours in the phase plane, as plotted below.
 
