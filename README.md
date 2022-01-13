@@ -24,7 +24,7 @@ Here, we have built a simple population dynamic model using ordinary differentia
 
 ### The Equations ###
 
-Equations in this system were modeled on those from given in [*Quantitative Viral Ecology* by Joshua Weitz (2015)](https://press.princeton.edu/books/hardcover/9780691161549/quantitative-viral-ecology) These modles use simple differential equations to build interacting populations of bacteria (B) and viruses (V) by modeling their change as a function of time and nutrient concentration (N), such as:
+Equations in this system were modeled on those from given in [*Quantitative Viral Ecology* by Joshua Weitz (2015)](https://press.princeton.edu/books/hardcover/9780691161549/quantitative-viral-ecology). These models use simple differential equations to build interacting populations of bacteria (B) and viruses (V) by quantifying their change as a function of time and nutrient concentration (N).
 
 Bacterial Population
 > dBdt = growth - infection - death 
@@ -37,7 +37,7 @@ Virus Population
 > dVdt = β * φ * V * B -  φ * V * B - δv * V 
 
 
-Which were then coded into Python 3:
+To build the simulated system, these equations were coded into Python 3:
 ```
 dNdt = (-alpha * (N / (N + Q)) * B) + (g * (alpha  * (N/(N+Q))*B)) + (n * 1e-7 * phi * V * B)
 dBdt = ((mu) * (N/(Q + N)) * B) - (phi * V * B) - d*B
@@ -71,8 +71,6 @@ When the system is run with values taken from literature, given in [Table 1](htt
 These relationships can be easily visualized when looking at time-dependant behavior of the system between 0 and 10,000 hours in the phase plane, as plotted below.
 
 First, this figure represents the phase portrait of bacterial and viral populations across the temperature spectrum for the equations run without relative contact rate coefficient (left panel, plasma colorscheme) and with relative contact rate coefficient (right panel, viridis colorscheme). Phase plots begin at the un-marked end of the line and run down the plot, ending at the solid black point (10,000 hours). Faded colored plots represent the same system without lytic recycling, while the gray spotted line shows VBR.
-
-
 
 The pattern of these plots generally reflects the expected semi-cyclic behavior of both bacterial and viral populations within the system: a increase in bacterial population (movement -->) leads to a growth in viral population (movement ^), which inturn leades to a crash of the bacterial population (<--), creating a spiral/nautilis-like pattern. Two major execptions are obvious, both occuring at low temperature. In both plots, there is little change in bacterial population at low temperatures due to growth, indicated by little horizontal movement of the plots (especially towards positive bacterial growth). More noticably, without physical concentration increasing viral-host encounters (left panel), there is minimal infection (no vertical change) and indeed little change in either bacterial or viral populations below –6˚C.This is not observed in the right panel, where physical concentration allows for enhanced bacterial infection and therefor higher viral populations. Comparing these figures to the original VBR density plot (above), we see that including RCR creates time-dependent populations which largely overlap the observed VBR space.
 
