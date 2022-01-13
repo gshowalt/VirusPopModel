@@ -86,21 +86,17 @@ We can pull out the relative contribution of lytic recycling by comparing the fi
 
 ![Phase Portrait, Nuts](https://github.com/gshowalt/VirusPopModel/blob/main/Lytic%20contribution_17Jan.png)
 
-If we were to look at relative lytic contribution to recycled material across all possible parameter space, we can co-vary lytic and exudate material fractions to invesitgate if this patterns holds. Indeed, we see that at the "moderate" temperature ranges ( between –12˚C and –4˚C), lysis is more important relative to exudate, while the converse is true at endpoint temperatures (-13˚C and -2˚C).
-
-** INSERT FIGURE FROM DISSERTATION ***
-
-With this in mind, we can translate our bacterial and viral populations into carbon equivalents to estimate relative and absolute amount of organic carbon recycled.
+If we were to look at relative lytic contribution to recycled material across all possible parameter space, we can co-vary lytic and exudate material fractions to invesitgate if this patterns holds. Indeed, we see that at the "moderate" temperature ranges ( between –12˚C and –4˚C), lysis is more important relative to exudate, while the converse is true at endpoint temperatures (-13˚C and -2˚C). With this in mind, we can translate our bacterial and viral populations into carbon equivalents to estimate relative and absolute amount of organic carbon recycled.
 
 The code for this step is uploaded to the repository as [CarbonEquiv_noRCR.py](https://github.com/gshowalt/VirusPopModel/edit/main/Code/CarbonEquiv_Talmy.py) .
 
-Here's our figure of carbon cycling (1 = maximum carbon) as a function of temperature **WITHOUT** Brine Concentrating Factor
+Here, we show carbon cycling (1 = maximum carbon) as a function of temperature **WITHOUT** Brine Concentrating Factor
 
 ![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_noRCR_line.jpeg)
 
 Secondly, we apply the **physical concentration parameter** to the model. This physical concentration, a result of tightly constricted pore space within sea ice crystals, has been suggested to increase the _relative contact rate (RCR)_ of viruses and bacteria within sea ice brines compared to underlying seawater. The relationship between RCR and temperature, calculated by Wells and Deming 2006b, is shown in the repository file [WellsRCR.png](https://github.com/gshowalt/VirusPopModel/blob/main/WellsRCR.png) 
 
-Here's our figure of carbon cycling (1 = maximum carbon) as a function of temperature **WITH** Brine Concentrating Factor
+Here, we show carbon cycling (1 = maximum carbon) as a function of temperature **WITH** Brine Concentrating Factor
 
 ![Practice Text for Sizing](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Temp_RCR_line_withRCRline.jpeg)
 
@@ -111,7 +107,6 @@ Here's our figure of carbon cycling (1 = maximum carbon) as a function of temper
  <sup>1</sup> While values were parameterized from literature, unmanipulated parameters produced [run-away conditions](https://github.com/gshowalt/VirusPopModel/blob/main/CE_Grid_withRCR_runaway.jpeg) of growth and infection at certain temperatures prior to parameter fitting using the method detail in S1.
 
 
-
 ### supplemental information
 
 ## S1 Parameter fitting
@@ -120,9 +115,9 @@ Here's our figure of carbon cycling (1 = maximum carbon) as a function of temper
  
 In order to more accurately constrain parameters to the field observations, we wanted to compare calculate VBRs to observed values. As previously mentioned, observations of VBR within sea ice demonstrate high variability, and VBR can reach ratios fo 10,000 : 1 (refer to [Figure 1](https://github.com/gshowalt/VirusPopModel/blob/main/VBRfigure_recreation.png). 
 
-With these steady state solutions, we then wanted to probe for parameter ranges which reproduce observed VBR. To test parameter ranges in VBR, we iterated through random ranges of parameters, calculating VBRs for each set of randomly chosen parameter ranges and comparing the calculated VBR distribution to the observed distributions in the above figure. When the calculated VBR distribution was considered "the same" as the observed VBR distribution (i.e., 95% by a [Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)), we collected that set of parameter values as a possible "solution"  - a set of parameter ranges which could be reflective of the true environment. 46 (I gave up waiting on the program, for the paper we can do more/an even number) of these parameter ranges are plotted below, with the range shown for burst size, growth rate, and decay rate by individual lines and the average value in the circles. The ranges are ordered in ascending order, top to bottom, according to adsorption rate (find the data [here](https://github.com/gshowalt/VirusPopModel/blob/main/TDParams_runs46.xlsx))
+With these steady state solutions, we then wanted to probe for parameter ranges which reproduce observed VBR. To test parameter ranges in VBR, we iterated through random ranges of parameters, calculating VBRs for each set of randomly chosen parameter ranges and comparing the calculated VBR distribution to the observed distributions in the above figure. When the calculated VBR distribution was considered "the same" as the observed VBR distribution (i.e., 95% by a [Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)), we collected that set of parameter values as a possible "solution"  - a set of parameter ranges which could be reflective of the true environment. A subset of these parameter ranges are plotted below, with the range shown for burst size, growth rate, and decay rate by individual lines and the average value in the circles. The ranges are ordered in ascending order, top to bottom, according to adsorption rate (find the data [here](https://github.com/gshowalt/VirusPopModel/blob/main/TDParams_runs46.xlsx))
 
-The code for this step is given in [This file](https://github.com/gshowalt/VirusPopModel/blob/main/Code/TD_ParamFitting.py)
+The code for this step is given in [this file](https://github.com/gshowalt/VirusPopModel/blob/main/Code/TD_ParamFitting.py).
 
 
 ## S2 Steady state behavior 
